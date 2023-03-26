@@ -1,0 +1,218 @@
+:root {
+  --black: #262626;
+  --white: #e3e4e5;
+  --primary: #2a9fd6;
+  --secondary: #cc6d00;
+  --accent: #7a29a3;
+  --red: #a30000;
+  --green: #5f8f00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.front-nav, .inner-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 3rem;
+  padding-top: 20px;
+}
+.front-nav ul, .inner-nav ul {
+  list-style: none;
+}
+.front-nav a, .inner-nav a {
+  text-decoration: none;
+  color: var(--white);
+}
+.front-nav .site-name, .inner-nav .site-name {
+  font-size: 1.5rem;
+}
+.front-nav img, .inner-nav img {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.header {
+  background-color: var(--black);
+  padding-bottom: 20px;
+}
+
+.front-hero-section {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--black);
+  overflow: hidden;
+}
+.front-hero-section .hero {
+  max-width: 650px;
+  margin: clamp(200px, 50%, 30vh) auto;
+  color: var(--white);
+  text-align: center;
+}
+.front-hero-section .hero h1 {
+  font-size: clamp(40px, 5vw, 3rem);
+}
+.front-hero-section .hero p {
+  font-size: clamp(30px, 3vw, 1.75rem);
+  font-weight: 300;
+  margin-top: 1.5rem;
+}
+.front-hero-section .hero .cta {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.front-hero-section .hero .cta .cta-btn {
+  font-size: 1.5rem;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+.front-hero-section .hero .cta .cta-btn a {
+  color: var(--white);
+  text-decoration: none;
+}
+.front-hero-section .hero .cta .cta-main {
+  background-color: var(--primary);
+}
+.front-hero-section .hero .cta .cta-secondary {
+  border: 1px solid var(--secondary);
+}
+
+.header nav a {
+  text-decoration: none;
+  color: var(--white);
+}
+.header nav img {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem;
+}
+.header nav .links {
+  list-style: none;
+}
+
+.main-menu {
+  position: absolute;
+  right: 0;
+  margin-right: 3rem;
+}
+.main-menu #menu-main-menu {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+.main-menu .menu-links a {
+  transition: all 0.5s ease;
+  position: relative;
+}
+.main-menu .menu-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: all 0.5s ease;
+}
+.main-menu .menu-links a:hover {
+  color: red;
+}
+.main-menu .menu-links a:hover::after {
+  width: 100%;
+}
+
+.toggler-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  margin-right: 3rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.toggler-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  position: relative;
+  margin: 10px 0;
+  transition: all 0.5s ease;
+}
+.toggler-btn #span-1, .toggler-btn #span-3 {
+  transform-origin: right;
+  transform: scaleX(80%);
+}
+.toggler-btn #span-2 {
+  transform-origin: left;
+  transform: scaleX(80%);
+}
+
+.card {
+  border: 1px solid var(--secondary);
+  margin-bottom: 2rem;
+}
+.card .btn {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding-bottom: 2rem;
+}
+footer .copywrite {
+  font-size: clamp(12px, 30vw, 14px);
+}
+
+@media screen and (max-width: 768px) {
+  .main-menu {
+    margin-top: 50px !important;
+    opacity: 0;
+    transition: all 0.5s ease;
+    right: 0px;
+  }
+  .toggler-btn {
+    display: block;
+  }
+  .inner-nav .main-menu {
+    background: var(--black);
+    padding-right: 30px;
+    right: -50px;
+  }
+  .wp-block-media-text.is-stacked-on-mobile {
+    display: block;
+  }
+  .wp-block-media-text__media {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .hero {
+    width: 80%;
+    margin: 125px auto !important;
+  }
+  .cta {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 1.5rem auto;
+    gap: 2rem;
+  }
+  .site-name {
+    display: none;
+  }
+  footer .sections {
+    display: block !important;
+  }
+}
