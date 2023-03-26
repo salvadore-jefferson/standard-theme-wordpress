@@ -1,8 +1,8 @@
 :root {
   --black: #262626;
   --white: #e3e4e5;
-  --primary: #2a9fd6;
-  --secondary: #cc6d00;
+  --primary: #182A4E;
+  --secondary: #fb8500;
   --accent: #7a29a3;
   --red: #a30000;
   --green: #5f8f00;
@@ -74,14 +74,21 @@
   border-radius: 10px;
 }
 .front-hero-section .hero .cta .cta-btn a {
-  color: var(--white);
   text-decoration: none;
+  letter-spacing: 0.12rem;
 }
 .front-hero-section .hero .cta .cta-main {
-  background-color: var(--primary);
+  background-color: var(--secondary);
+}
+.front-hero-section .hero .cta .cta-main a {
+  color: var(--white);
+  font-weight: 700;
 }
 .front-hero-section .hero .cta .cta-secondary {
-  border: 1px solid var(--secondary);
+  border: 2px solid var(--white);
+}
+.front-hero-section .hero .cta .cta-secondary a {
+  color: var(--white);
 }
 
 .header nav a {
@@ -116,14 +123,14 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: red;
+  background-color: var(--secondary);
   top: 0;
   left: 0;
   transform-origin: left;
   transition: all 0.5s ease;
 }
 .main-menu .menu-links a:hover {
-  color: red;
+  color: var(--secondary);
 }
 .main-menu .menu-links a:hover::after {
   width: 100%;
@@ -170,9 +177,51 @@ footer {
   background: var(--black);
   color: var(--white);
   padding-bottom: 2rem;
+  line-height: 2rem;
+}
+footer h3 {
+  text-decoration: underline;
+}
+footer .right ul {
+  list-style-type: none;
+}
+footer .right a {
+  margin: 0 -1.75rem;
+  text-decoration: none;
+  color: var(--white);
+  transition: all 0.5s ease;
+  position: relative;
+}
+footer .right a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: all 0.5s ease;
+}
+footer .right a:hover {
+  color: var(--secondary);
+}
+footer .right a:hover::after {
+  width: 100%;
 }
 footer .copywrite {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   font-size: clamp(12px, 30vw, 14px);
+}
+footer .copywrite #seperator {
+  font-size: 1.25rem;
+  margin-top: -0.25rem;
+}
+footer .copywrite a {
+  color: var(--secondary);
+  text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -196,6 +245,12 @@ footer .copywrite {
   .wp-block-media-text__media {
     display: none;
   }
+  .copywrite {
+    flex-direction: column !important;
+  }
+  .copywrite #seperator {
+    display: none;
+  }
 }
 @media screen and (max-width: 576px) {
   .hero {
@@ -213,6 +268,12 @@ footer .copywrite {
     display: none;
   }
   footer .sections {
-    display: block !important;
+    flex-direction: column !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+  footer .sections .section {
+    width: 70%;
+    margin: 0 auto;
   }
 }
