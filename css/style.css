@@ -45,31 +45,33 @@
 .front-hero-section {
   width: 100%;
   height: 100vh;
-  background-color: var(--black);
+  background-color: #000;
   overflow: hidden;
 }
 .front-hero-section .hero {
-  max-width: 650px;
-  margin: clamp(200px, 50%, 30vh) auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
   color: var(--white);
-  text-align: center;
 }
 .front-hero-section .hero h1 {
-  font-size: clamp(40px, 5vw, 3rem);
+  font-size: clamp(30px, 5vw, 3rem);
 }
 .front-hero-section .hero p {
-  font-size: clamp(30px, 3vw, 1.75rem);
+  font-size: clamp(20px, 3vw, 1.75rem);
   font-weight: 300;
   margin-top: 1.5rem;
 }
 .front-hero-section .hero .cta {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 3rem;
   margin-top: 3rem;
 }
 .front-hero-section .hero .cta .cta-btn {
-  font-size: 1.5rem;
+  font-size: 20px;
   padding: 10px 30px;
   border-radius: 10px;
 }
@@ -90,6 +92,19 @@
 .front-hero-section .hero .cta .cta-secondary a {
   color: var(--white);
 }
+.front-hero-section .hero .hero-text {
+  width: 60%;
+  height: 100%;
+  z-index: 2;
+  margin-top: clamp(200px, 50%, 30vh);
+  margin-left: 3rem;
+  margin-right: -5rem;
+}
+.front-hero-section .hero .hero-img {
+  width: clamp(25vw, 700px, 50vw);
+  height: 100%;
+  transition: all 0.5s ease;
+}
 
 .header nav a {
   text-decoration: none;
@@ -108,6 +123,7 @@
   position: absolute;
   right: 0;
   margin-right: 3rem;
+  z-index: 10;
 }
 .main-menu #menu-main-menu {
   display: flex;
@@ -225,6 +241,20 @@ footer .copywrite a {
 }
 
 @media screen and (max-width: 768px) {
+  .hero-img {
+    display: none;
+  }
+  .hero-text {
+    width: 100% !important;
+    text-align: center;
+    margin-right: 3rem !important;
+  }
+  .cta {
+    width: 100%;
+    justify-content: center !important;
+    margin: 1.5rem auto;
+    gap: 2rem;
+  }
   .main-menu {
     margin-top: 50px !important;
     opacity: 0;
@@ -254,15 +284,21 @@ footer .copywrite a {
 }
 @media screen and (max-width: 576px) {
   .hero {
-    width: 80%;
-    margin: 125px auto !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .hero-text {
+    margin-top: 150px !important;
   }
   .cta {
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 100%;
     align-items: center;
     margin: 1.5rem auto;
-    gap: 2rem;
+    gap: 1.25rem !important;
+  }
+  .cta .cta-btn {
+    font-size: 16px !important;
   }
   .site-name {
     display: none;
@@ -275,5 +311,10 @@ footer .copywrite a {
   footer .sections .section {
     width: 70%;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 550px) {
+  .cta {
+    flex-direction: column !important;
   }
 }

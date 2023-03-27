@@ -21,9 +21,9 @@
         background-image: url(<?php echo get_theme_mod('hero_image', get_bloginfo('template_url').'/img/hero-bg.jpg');
         ?>);
         background-repeat: no-repeat;
-        background-size: 150%;
-        background-position-y: calc(100% - 60%);
-        filter: invert(100%);
+        background-size: cover;
+        background-position-x: 50px;
+        background-position-y: 50px;
     }
     </style>
 </head>
@@ -56,7 +56,7 @@
                     <h1><?php echo get_theme_mod('hero_heading', 'Custom Wordpress Theme'); ?></h1>
                 </div>
                 <div class="sub-tagline">
-                    <p><?php echo get_theme_mod('hero_text', 'Standard Theme For Small Businesses'); ?></p>
+                    <p><?php echo get_theme_mod('hero_text', 'Basic Theme For Small Businesses'); ?></p>
                 </div>
                 <div class="cta">
                     <div class="cta-btn cta-main">
