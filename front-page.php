@@ -16,16 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="<?php bloginfo('template_url');?>/css/style.css" rel="stylesheet">
     <?php wp_head(); ?>
-    <style>
-    .hero-img {
-        background-image: url(<?php echo get_theme_mod('hero_image', get_bloginfo('template_url').'/img/hero-bg.jpg');
-        ?>);
-        background-repeat: no-repeat;
-        background-size: 150%;
-        background-position-y: calc(100% - 60%);
-        filter: invert(100%);
-    }
-    </style>
+
 </head>
 
 <body>
@@ -69,7 +60,10 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-img"></div>
+            <div class="hero-img">
+                <img src="<?php echo get_theme_mod('hero_image', get_bloginfo('template_url').'/img/hero-bg.jpg');?>"
+                    alt="">
+            </div>
         </div>
     </header>
     <main class="container mt-5">
@@ -80,19 +74,16 @@
                     <?php dynamic_sidebar('box1'); ?>
                     <?php endif; ?>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <?php if(is_active_sidebar('box2')) : ?>
-                <?php dynamic_sidebar('box2'); ?>
-                <?php endif; ?>
-            </div>
-            </div>
-            <div class="col-md-4">
-                <?php if(is_active_sidebar('box3')) : ?>
-                <?php dynamic_sidebar('box3'); ?>
-                <?php endif; ?>
-            </div>
-            </div>
+                <div class="col-md-4">
+                    <?php if(is_active_sidebar('box2')) : ?>
+                    <?php dynamic_sidebar('box2'); ?>
+                    <?php endif; ?>
+                </div>
+                <div class="col-md-4">
+                    <?php if(is_active_sidebar('box3')) : ?>
+                    <?php dynamic_sidebar('box3'); ?>
+                    <?php endif; ?>
+                </div>
         </section>
         <section>
             <p class="blog-body"><?php the_content();?></p>
